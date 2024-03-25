@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import random
 
+st.title("Streamlit Quiz App for ITIL4 Exam")
 # Funzione per ottenere l'input dell'utente come un intero compreso tra 0 e 3
 def get_integer_input(prompt, key):
     while True:
