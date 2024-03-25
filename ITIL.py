@@ -20,7 +20,7 @@ corrette = 0
 answer = []
 scelta = None
 # Per ogni riga del dataframe, visualizza la domanda e le opzioni di risposta
-st.form("general_form", clear_on_submit=False)
+with st.form("general_form", clear_on_submit=False)
     for i, row in test.iterrows():
         st.write(f'#### Question {i}):')
         st.write(f'###### {row["domanda"]}')
