@@ -23,7 +23,7 @@ corrette = 0
 # Per ogni riga del dataframe, visualizza la domanda e le opzioni di risposta
 for i, row in test.iterrows():
     st.write(f'Domanda {i + 1}):\n{row["domanda"]}')
-    answer = row["errate"] + [row["giusta"]]  # Aggiungi la risposta giusta alla lista delle risposte errate
+    answer = row["errate"] + row["giusta"]  # Aggiungi la risposta giusta alla lista delle risposte errate
     random.shuffle(answer)
     for j, a in enumerate(answer):
         st.write(f"\t{j}. {a}\n")
