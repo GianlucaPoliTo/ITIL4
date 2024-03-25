@@ -27,9 +27,9 @@ for i, row in test.iterrows():
     answer = row["errate"] + row["giusta"]
     random.shuffle(answer)
     for j, a in enumerate(answer):
-        #st.write(f"\t{j}. {a}\n")
+        st.write(f"\t{j}. {a}\n")
         # Ottieni la risposta dall'utente
-        scelta = get_integer_input("Inserisci risposta 0 - 3:", key=i)
+    scelta = get_integer_input("Inserisci risposta 0 - 3:", key=i)
         # Controlla se la risposta è corretta
         #if answer[scelta] == row["giusta"][0]:
         #    corrette += 1
