@@ -7,8 +7,8 @@ st.title("Streamlit Quiz App for ITIL4 Exam")
 def get_integer_input(prompt, key):
     value = st.number_input("Insert answer 0 - 3", min_value=0, max_value=3, value=None, key=key)
     return value
-def score(len(test)):
-    st.write(f"Your final score is {corrette}/{len(test)}")
+def score(lt):
+    st.write(f"Your final score is {corrette}/{lt}")
     
 # Carica il dataframe con le domande e le risposte
 df_test = pd.read_csv('ITIL4_Exam.csv')
