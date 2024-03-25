@@ -39,6 +39,7 @@ for i, row in test.iterrows():
                 break
             else:
                 st.write(f"Errato, risposta corretta: {row['giusta'][0]}")
+                break
         time.sleep(1)
 
 # Visualizza il punteggio totale
