@@ -22,7 +22,6 @@ row = df_test.sample(1)
 st.write(f'#### Question:')
 st.write(f'###### {row["domanda"]}')
 ## Aggiungi la risposta giusta alla lista delle risposte errate
-st.write(type(row["giusta"]))
 #row["giusta"] = eval(row["giusta"])
 #row["errate"] = eval(row["errate"])
 answer = row["errate"] + row["giusta"]
