@@ -2,6 +2,8 @@ import streamlit as st
 import pandas as pd
 import random
 import time
+import streamlit_book as stb
+
 st.title("Streamlit Quiz App for ITIL4 Exam")
 # Funzione per ottenere l'input dell'utente come un intero compreso tra 0 e 3
 
@@ -12,30 +14,12 @@ def get_integer_input(prompt, ):
 # Carica il dataframe con le domande e le risposte
 df_test = pd.read_csv('ITIL4_Exam.csv')
 # Inizializza il punteggio corretto
-corrette = 0
-sbagliate = 0
-answer = []
-scelta = None
-row = df_test.sample(1)
-
-# Per ogni riga del dataframe, visualizza la domanda e le opzioni di risposta
-st.write(f'#### Question:')
-st.write(f'###### {row["domanda"]}')
-## Aggiungi la risposta giusta alla lista delle risposte errate
-#row["giusta"] = eval(row["giusta"])
-#row["errate"] = eval(row["errate"])
-answer = row["errate"].to_list() + row["giusta"].to_list()
-random.shuffle(answer)
-for j, a in enumerate(answer):
-    st.write(f"\t{j}. {a}\n")
-    # Ottieni la risposta dall'utente
-scelta = get_integer_input("Inserisci risposta 0 - 3:")
-    # Controlla se la risposta è corretta
-if answer[scelta] == row["giusta"][0]:
-    corrette += 1
-else:
-    st.write(f"Errato, risposta corretta: {row['giusta'][0]}")
-    sbagliate +=1
-    
-
+for row in df_test.iterrows():
+    row["giusta"] = eval(row["giusta"])
+    row["sbagliate"] = eval(row[”sbagliate"]
+    answers = row["giusta"]+row["sbagliate"]
+    random.shuffle(answers)
+    index = answers.index(row["giusta"])
+    question = row["domanda"]
+    single_choice(question, answers, index, success='Correct answer', error='Wrong answer', button='Check answer')
 
