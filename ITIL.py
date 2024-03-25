@@ -35,7 +35,7 @@ for i, row in test.iterrows():
         st.write(f"\t{j}. {a}\n")
 
     # Ottieni la risposta dall'utente
-    scelta = get_integer_input("Inserisci risposta 0 - 3:")
+    scelta = get_integer_input("Inserisci risposta 0 - 3:", i)
     
     # Controlla se la risposta è corretta
     if answer[scelta] == row["giusta"][0]:
