@@ -15,11 +15,13 @@ def get_integer_input(prompt):
             st.error("Inserisci un numero valido.")
 
 # Carica il dataframe con le domande e le risposte
-test = pd.read_csv('ITIL4_Exam.csv')
-
+df_test = pd.read_csv('ITIL4_Exam.csv')
+n_domande=15
+test = df_test.sample(n_domande).reset_index(drop=True)
+test.index=test.index+1
 # Inizializza il punteggio corretto
 corrette = 0
-
+answer = []
 # Per ogni riga del dataframe, visualizza la domanda e le opzioni di risposta
 for i, row in test.iterrows():
     st.write(f'Domanda {i + 1}):')
