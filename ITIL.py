@@ -3,10 +3,10 @@ import pandas as pd
 import random
 
 # Funzione per ottenere l'input dell'utente come un intero compreso tra 0 e 3
-def get_integer_input(prompt):
+def get_integer_input(prompt, key):
     while True:
         try:
-            value = int(st.text_input(prompt))
+            value = int(st.text_input(prompt, key=key))
             if 0 <= value <= 3:
                 return value
             else:
