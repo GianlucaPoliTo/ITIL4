@@ -25,7 +25,7 @@ answer = []
 # Per ogni riga del dataframe, visualizza la domanda e le opzioni di risposta
 for i, row in test.iterrows():
     st.write(f'Question {i}):')
-    st.write(f'{row["domanda"]}')
+    st.write(f'## {row["domanda"]}')
     ## Aggiungi la risposta giusta alla lista delle risposte errate
     row["giusta"] = eval(row["giusta"])
     row["errate"] = eval(row["errate"])
