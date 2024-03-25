@@ -24,7 +24,7 @@ corrette = 0
 answer = []
 # Per ogni riga del dataframe, visualizza la domanda e le opzioni di risposta
 for i, row in test.iterrows():
-    st.write(f'Domanda {i + 1}):')
+    st.write(f'Domanda {i}):')
     st.write(f'{row["domanda"]}')
     ## Aggiungi la risposta giusta alla lista delle risposte errate
     print(type(row["giusta"]))
