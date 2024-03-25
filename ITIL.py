@@ -27,7 +27,8 @@ for i, row in test.iterrows():
     st.write(f'Domanda {i}):')
     st.write(f'{row["domanda"]}')
     ## Aggiungi la risposta giusta alla lista delle risposte errate
-    st.write(type(row["giusta"]))
+    row["giusta"] = eval(row["giusta"])
+    row["errate"] = eval(row["errate"])
     st.write(type(row["errate"]))
     answer = row["errate"] + row["giusta"]
     random.shuffle(answer)
