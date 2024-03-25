@@ -16,11 +16,12 @@ corrette = 0
 sbagliate = 0
 answer = []
 scelta = None
+row = df_test.sample(1)
+
 # Per ogni riga del dataframe, visualizza la domanda e le opzioni di risposta
 st.write(f'#### Question:')
 st.write(f'###### {row["domanda"]}')
 ## Aggiungi la risposta giusta alla lista delle risposte errate
-row = df_test.sample(1)
 row["giusta"] = eval(row["giusta"])
 row["errate"] = eval(row["errate"])
 answer = row["errate"] + row["giusta"]
