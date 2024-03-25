@@ -6,7 +6,7 @@ import random
 def get_integer_input(prompt, key):
     while True:
         try:
-            value = int(st.text_input(prompt, key=key+str(random.rand()))
+            value = int(st.text_input(prompt, key=key+str(random.rand())))
             if 0 <= value <= 3:
                 return value
             else:
