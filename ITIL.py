@@ -1,13 +1,11 @@
 import streamlit as st
 import pandas as pd
 import random
-
+import time
 st.title("Streamlit Quiz App for ITIL4 Exam")
 # Funzione per ottenere l'input dell'utente come un intero compreso tra 0 e 3
 def get_integer_input(prompt, key):
-    with st.form(key):
-        value = st.number_input("Insert answer 0 - 3", min_value=0, max_value=3, value=None, key=key)
-        submitted = st.form_submit_button("Submit")
+    value = st.number_input("Insert answer 0 - 3", min_value=0, max_value=3, value=None, key=key)
     return value
 
 # Carica il dataframe con le domande e le risposte
@@ -32,8 +30,8 @@ for i, row in test.iterrows():
         st.write(f"\t{j}. {a}\n")
 
     # Ottieni la risposta dall'utente
-    while scelta == None:
-        scelta = get_integer_input("Inserisci risposta 0 - 3:", key=f"input_{i}")
+    scelta = get_integer_input("Inserisci risposta 0 - 3:", key=f"input_{i}")
+    while True:
         if scelta != None:
             # Controlla se la risposta è corretta
             if answer[scelta] == row["giusta"][0]:
@@ -41,6 +39,7 @@ for i, row in test.iterrows():
                 break
             else:
                 st.write(f"Errato, risposta corretta: {row['giusta'][0]}")
+        time.sleep(1)
 
 # Visualizza il punteggio totale
 st.write(f"Your final score is {corrette}/{len(test)}")
