@@ -30,12 +30,12 @@ for i, row in test.iterrows():
 
     # Ottieni la risposta dall'utente
     scelta = get_integer_input("Inserisci risposta 0 - 3:", key=f"input_{i}")
-    
-    # Controlla se la risposta è corretta
-    if answer[scelta] == row["giusta"][0]:
-        corrette += 1
-    else:
-        st.write(f"Errato, risposta corretta: {row['giusta'][0]}")
+    if scelta != None:
+        # Controlla se la risposta è corretta
+        if answer[scelta] == row["giusta"][0]:
+            corrette += 1
+        else:
+            st.write(f"Errato, risposta corretta: {row['giusta'][0]}")
 
 # Visualizza il punteggio totale
 st.write(f"Your final score is {corrette}/{len(test)}")
