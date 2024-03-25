@@ -21,24 +21,24 @@ answer = []
 scelta = None
 # Per ogni riga del dataframe, visualizza la domanda e le opzioni di risposta
 st.form("general_form", clear_on_submit=False)
-for i, row in test.iterrows():
-    st.write(f'#### Question {i}):')
-    st.write(f'###### {row["domanda"]}')
-    ## Aggiungi la risposta giusta alla lista delle risposte errate
-    row["giusta"] = eval(row["giusta"])
-    row["errate"] = eval(row["errate"])
-    answer = row["errate"] + row["giusta"]
-    random.shuffle(answer)
-    for j, a in enumerate(answer):
-        st.write(f"\t{j}. {a}\n")
-        # Ottieni la risposta dall'utente
-    scelta = get_integer_input("Inserisci risposta 0 - 3:", key=i)
-        # Controlla se la risposta è corretta
-        #if answer[scelta] == row["giusta"][0]:
-        #    corrette += 1
-        #else:
-        #    st.write(f"Errato, risposta corretta: {row['giusta'][0]}")
-
-st.form_submit_button(label="Submit", help=None, on_click=None, args=None, kwargs=None,)
+    for i, row in test.iterrows():
+        st.write(f'#### Question {i}):')
+        st.write(f'###### {row["domanda"]}')
+        ## Aggiungi la risposta giusta alla lista delle risposte errate
+        row["giusta"] = eval(row["giusta"])
+        row["errate"] = eval(row["errate"])
+        answer = row["errate"] + row["giusta"]
+        random.shuffle(answer)
+        for j, a in enumerate(answer):
+            st.write(f"\t{j}. {a}\n")
+            # Ottieni la risposta dall'utente
+        scelta = get_integer_input("Inserisci risposta 0 - 3:", key=i)
+            # Controlla se la risposta è corretta
+            #if answer[scelta] == row["giusta"][0]:
+            #    corrette += 1
+            #else:
+            #    st.write(f"Errato, risposta corretta: {row['giusta'][0]}")
+    
+    st.form_submit_button(label="Submit", help=None, on_click=None, args=None, kwargs=None,)
 
 
