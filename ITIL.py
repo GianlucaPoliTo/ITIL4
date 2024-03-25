@@ -24,7 +24,7 @@ st.write(f'###### {row["domanda"]}')
 ## Aggiungi la risposta giusta alla lista delle risposte errate
 #row["giusta"] = eval(row["giusta"])
 #row["errate"] = eval(row["errate"])
-answer = row["errate"] + row["giusta"]
+answer = row["errate"].to_list() + row["giusta"].to_list()
 random.shuffle(answer)
 for j, a in enumerate(answer):
     st.write(f"\t{j}. {a}\n")
