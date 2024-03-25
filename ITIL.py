@@ -23,8 +23,8 @@ st.write(f'#### Question:')
 st.write(f'###### {row["domanda"]}')
 ## Aggiungi la risposta giusta alla lista delle risposte errate
 st.write(type(row["giusta"]))
-row["giusta"] = eval(row["giusta"])
-row["errate"] = eval(row["errate"])
+#row["giusta"] = eval(row["giusta"])
+#row["errate"] = eval(row["errate"])
 answer = row["errate"] + row["giusta"]
 random.shuffle(answer)
 for j, a in enumerate(answer):
