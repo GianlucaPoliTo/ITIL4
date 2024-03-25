@@ -29,7 +29,6 @@ for i, row in test.iterrows():
     ## Aggiungi la risposta giusta alla lista delle risposte errate
     row["giusta"] = eval(row["giusta"])
     row["errate"] = eval(row["errate"])
-    st.write(type(row["errate"]))
     answer = row["errate"] + row["giusta"]
     random.shuffle(answer)
     for j, a in enumerate(answer):
