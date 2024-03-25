@@ -6,7 +6,7 @@ st.title("Streamlit Quiz App for ITIL4 Exam")
 # Funzione per ottenere l'input dell'utente come un intero compreso tra 0 e 3
 def get_integer_input(prompt, key):
     try:
-        value = int(st.text_input(prompt, key=key, default=0))
+        value = int(st.text_input(prompt, key=key))
         if 0 <= value <= 3:
             return value
         else:
