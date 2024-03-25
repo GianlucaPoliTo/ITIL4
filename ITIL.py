@@ -5,15 +5,14 @@ import random
 st.title("Streamlit Quiz App for ITIL4 Exam")
 # Funzione per ottenere l'input dell'utente come un intero compreso tra 0 e 3
 def get_integer_input(prompt, key):
-    while True:
-        try:
-            value = int(st.text_input(prompt, key=key+str(random.randint(0,100000)), default=0))
-            if 0 <= value <= 3:
-                return value
-            else:
-                st.error("Inserisci un numero compreso tra 0 e 3.")
-        except ValueError:
-            st.error("Inserisci un numero valido.")
+    try:
+        value = int(st.text_input(prompt, key=key, default=0))
+        if 0 <= value <= 3:
+            return value
+        else:
+            st.error("Inserisci un numero compreso tra 0 e 3.")
+    except ValueError:
+        st.error("Inserisci un numero valido.")
 
 # Carica il dataframe con le domande e le risposte
 df_test = pd.read_csv('ITIL4_Exam.csv')
