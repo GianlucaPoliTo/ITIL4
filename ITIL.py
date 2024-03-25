@@ -27,20 +27,15 @@ for i, row in test.iterrows():
     answer = row["errate"] + row["giusta"]
     random.shuffle(answer)
     for j, a in enumerate(answer):
-        st.write(f"\t{j}. {a}\n")
+        #st.write(f"\t{j}. {a}\n")
+        # Ottieni la risposta dall'utente
+        scelta = get_integer_input("Inserisci risposta 0 - 3:", key=i)
+        # Controlla se la risposta è corretta
+        #if answer[scelta] == row["giusta"][0]:
+        #    corrette += 1
+        #else:
+        #    st.write(f"Errato, risposta corretta: {row['giusta'][0]}")
 
-    # Ottieni la risposta dall'utente
-    scelta = get_integer_input("Inserisci risposta 0 - 3:", key=f"input_{i}")
-    while True:
-        if scelta != None:
-            # Controlla se la risposta è corretta
-            if answer[scelta] == row["giusta"][0]:
-                corrette += 1
-                break
-            else:
-                st.write(f"Errato, risposta corretta: {row['giusta'][0]}")
-                break
-        time.sleep(1)
 
 # Visualizza il punteggio totale
 st.write(f"Your final score is {corrette}/{len(test)}")
