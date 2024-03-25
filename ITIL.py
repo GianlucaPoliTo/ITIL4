@@ -25,7 +25,7 @@ corrette = 0
 answer = []
 # Per ogni riga del dataframe, visualizza la domanda e le opzioni di risposta
 for i, row in test.iterrows():
-    st.write(f'Domanda {i}):')
+    st.write(f'Question {i}):')
     st.write(f'{row["domanda"]}')
     ## Aggiungi la risposta giusta alla lista delle risposte errate
     row["giusta"] = eval(row["giusta"])
@@ -45,5 +45,5 @@ for i, row in test.iterrows():
         st.write(f"Errato, risposta corretta: {row['giusta'][0]}")
 
 # Visualizza il punteggio totale
-st.write(f"Hai ottenuto un punteggio di {corrette}/{len(test)}")
+st.write(f"Your final score is {corrette}/{len(test)}")
 
