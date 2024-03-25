@@ -5,7 +5,7 @@ import random
 st.title("Streamlit Quiz App for ITIL4 Exam")
 # Funzione per ottenere l'input dell'utente come un intero compreso tra 0 e 3
 def get_integer_input(prompt, key):
-    value = st.number_input(min_value=0, max_value=3, value=None)
+    value = st.number_input("Insert number answer 0 -3", min_value=0, max_value=3, value=None)
     return value
 
 # Carica il dataframe con le domande e le risposte
