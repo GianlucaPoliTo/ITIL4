@@ -39,6 +39,6 @@ for i, row in test.iterrows():
         #else:
         #    st.write(f"Errato, risposta corretta: {row['giusta'][0]}")
 
-st.form_submit_button(label="Submit", help=None, on_click=None, args=None, kwargs=None, *,)
+st.form_submit_button(label="Submit", help=None, on_click=None, args=None, kwargs=None,)
 
 
