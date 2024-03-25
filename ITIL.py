@@ -16,7 +16,7 @@ df_test = pd.read_csv('ITIL4_Exam.csv')
 # Inizializza il punteggio corretto
 for row in df_test.iterrows():
     row["giusta"] = eval(row["giusta"])
-    row["sbagliate"] = eval(row[”sbagliate"])
+    row["sbagliate"] = eval(row["sbagliate"])
     answers = row["giusta"]+row["sbagliate"]
     random.shuffle(answers)
     index = answers.index(row["giusta"])
