@@ -15,8 +15,7 @@ def get_integer_input(prompt):
             st.error("Inserisci un numero valido.")
 
 # Carica il dataframe con le domande e le risposte
-# Assumo che 'test.csv' contenga le domande e le risposte
-test = pd.read_csv('test.csv')
+test = pd.read_csv('ITIL4_Exam.csv')
 
 # Inizializza il punteggio corretto
 corrette = 0
